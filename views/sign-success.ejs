@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html data-dpr='dpr'>
+
+<head>
+	<meta charset="utf-8">
+	<title>报名成功</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" type="text/css" media="screen" href="/static/mui/css/mui.css" />
+	<link rel="stylesheet" href="/css/sign.css">
+	<script src="/static/jquery-2.1.4.js"></script>
+	<script src="/static/juicer-min.js"></script>
+	<script src="/static/html2canva.js"></script>
+	<script src="/static/canva2images.js"></script>
+	<script src="/static/base64.js"></script>
+</head>
+
+<body>
+	<!--单页面开始-->
+	<!--页面主内容区开始-->
+		<!-- <div class="mui-page-content">
+			
+		</div> -->
+			<div class="mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<div class="mui-content share_link">
+						<a class="success_icon">
+							<img src="/img/logo.png" alt="">
+						</a>
+						<a class="success_title" >
+								海峡两岸 青少年文化艺术盛典报名成功
+						</a>
+						<a href="/share?unionId=<%= data.activeUser.unionId %>"  class="success_share" >
+							<img src="/img/share.png" alt="">
+						</a>
+							<!-- <div class="mui-card">
+								<div class="mui_title share_link">
+									<a href="javascript:;" class="m_logo">
+										<img src="/img/logo.png" alt="">
+									</a>
+									<a href="JavaScript:;" class="m_title" >海峡两岸 青少年文化艺术盛典报名成功</a>	
+									<a href="javascript:;" id="shareBtn">
+										<img src="/img/share.png" alt="">
+									</a>
+								</div>
+							</div> -->
+						</div>
+					<ul class="mui-table-view mui-table-view-chevron">
+						<li class="mui-table-view-cell mui-media" id="headerImg">
+							<a class="mui-navigate-right" href="javascript:;">
+									<!-- <img src="/img/share.png" alt="" class="mui-media-object mui-pull-left head-img" id="head-img"> -->
+								<img class="mui-media-object mui-pull-left head-img" id="head-img" src="http://14.152.78.100:8081/download/img?type=1&img=<%= data.activeUser.headImg %>">
+								<div class="mui-media-body">
+									<p class="s_name">
+										<%= data.activeUser.name %>
+										<span class="student_id">参赛ID：<%=data.activeUser.participationId %></span>
+									</p>
+									<!-- <p class='mui-ellipsis s_category'>
+										参赛类别：<%= data.activeUser.category %>
+										<span></span>
+									</p> -->
+									<p class='mui-ellipsis'>
+										身份证号：<%= data.activeUser.cardCode %>
+										<span></span>
+									</p>
+								</div>
+							</a>
+						</li>
+					</ul>
+					<div class="mui-content">
+						<div class="mui-card">
+							<!--页眉，放置标题-->
+							<div class="mui_title">
+									节目
+								</div>
+								<!--内容区-->
+								<div class="mui-card-content">
+									<div class="mui-input-row ">
+										<label>节目名称</label>
+										<input type="text" class="mui-input-clear" disabled placeholder="<%= data.activeUser.programName %>">
+									</div>
+									<div class="mui-input-row ">
+										<label>节目类别</label>
+										
+										<input type="text" class="mui-input-clear" disabled placeholder="<%= data.activeUser.category %>/<%= data.activeUser.type == '1'? '个人': '团体' %>">
+									</div>
+									
+								</div>
+							<div class="mui_title">
+								指导老师
+							</div>
+							<!--内容区-->
+							<div class="mui-card-content">
+								<div class="mui-input-row ">
+									<label>所属机构</label>
+									<input type="text" class="mui-input-clear" disabled placeholder="<%= data.activeUser.affiliation %>">
+								</div>
+								<div class="mui-input-row ">
+									<label>姓名</label>
+									<input type="text" class="mui-input-clear" disabled placeholder="<%= data.activeUser.teachersName %>">
+								</div>
+								<div class="mui-input-row no_border">
+									<label>联系方式</label>
+									<input type="text" class="mui-input-clear" disabled placeholder="<%= data.activeUser.teacherMobile %>">
+								</div>
+							</div>
+							<div class="mui_title">
+								监护人
+							</div>
+							<!--内容区-->
+							<div class="mui-card-content">
+								<div class="mui-input-row ">
+									<label>姓名</label>
+									<input type="text" class="mui-input-clear" disabled placeholder="<%= data.activeUser.parentsName %>">
+								</div>
+								<div class="mui-input-row no_border">
+									<label>联系方式</label>
+									<input type="text" class="mui-input-clear" disabled placeholder="<%= data.activeUser.parentsMobile %>">
+								</div>
+							</div>
+						</div>
+						<div class="mui-row m_qrcodes">
+							<div class="mui-col-sm-6">
+								<li class="mui-table-view-cell qrcode_cont">
+									<img class="mui-media-object mui-pull-left " src="/img/hx.jpg">
+									<p>海峡盛典公众号</p>
+								</li>
+							</div>
+						<div class="mui-col-sm-6">
+							<li class="mui-table-view-cell qrcode_cont">
+								<img class="mui-media-object mui-pull-left " src="/img/feimuke.png">
+								<p>报名注意事项</p>
+							</li>
+						</div>
+						</div>
+						<div class="mui-row">
+							<li class="mui-table-view-cell">
+								<p class="mui_masters">*关于赛事如有疑问,请到公众号【海峡盛典协会】留言给组委会，官方将及时回复</p>
+							</li>
+						</div> 
+					</div>
+				</div>
+			</div>
+			
+
+	<!--页面主内容区结束-->
+
+	
+</body>
+<script src="/static/mui/js/mui.js"></script>
+<script src="/js/myStorage.js"></script>
+<script>
+// 	var dataInfo = JSON.parse(myStorage.getItem("dataInfo"));
+// 	console.log(dataInfo);
+//    var html = $('#template').html();
+//    var htmlTemp = juicer(html, dataInfo.data);
+//    $('.mui-page-content').append(htmlTemp);
+		// html2canvas(document.getElementById("share_page"), {//这里是要截图的DIV
+		// 	allowTaint: true,
+		// 	taintTest: false,
+		// 	useCORS: true,
+		// 	onrendered: function(canvas) {
+		// 		$('.share_page').hide();				
+		// 		canvas.id = "mycanvas";
+		// 		//document.body.appendChild(canvas);
+		// 		//生成base64图片数据
+		// 		mui('#popovers').popover('show');
+		// 		var dataUrl = canvas.toDataURL();
+		// 		$('.qrcode_examples_text img').attr('src', dataUrl );
+		// 	}
+	
+	// 截取图片
+  
+</script>
+</html>

@@ -1,0 +1,303 @@
+body,html {
+  font: 12px "Lucida Grande", Helvetica, Arial, sans-serif;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+}
+
+a {
+  color: #00B7FF;
+}
+.myIcon{
+  position: absolute;
+  width: 8%;
+  right: 1%;
+  top: 25%;
+}
+.myIcons{
+  position: absolute;
+  right: 0;
+  top: 15%;
+}
+.hx_hearder{
+  width: 100%;
+  margin-bottom: 60px;
+}
+.hx_hearder img{
+  width: 100%;
+}
+/* 重置样式 */
+/* .mui-input-row#c_activity_type input{
+  width: 30%;
+  text-align: center;
+  border: 1px solid #999;
+  border-radius: 3px;
+
+}
+#c_activity_type input[name="organization"]{
+  margin-right: 10%;
+}
+#c_activity_type input[name="category"]{
+  margin-right: 5px;
+} */
+.mui-input-group,.mui-content,.mui-input-group:before,.mui-input-group .m-detail:after{
+  background: none;
+}
+.mui-popup-button:after{
+  background-color: transparent;
+}
+.mui-card{
+  box-shadow:none;
+  border:1px solid #c8c7cc;
+  margin-bottom: 60px;
+}
+.mui-table-view-cell{
+  padding: 0;
+}
+.m-detail{
+  border:none;
+  margin-bottom: 0;
+  font-size: 14px;
+  color: #fff;
+  margin-top: -0.2rem;
+  margin-left: 10%;
+  margin-bottom: .2rem;
+}
+.m-detail span.m_checkbox{
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+}
+
+.m-detail p{
+  color: #fff;
+  display: inline-block;
+}
+/* 重置样式 */
+.mui-popup-button{
+  white-space: normal;
+  line-height: normal;
+}
+.mui-popup-button:last-child{
+  border-radius: none;
+}
+.m-detail .about_detail a{
+  color: #fff;
+  padding-bottom: 1px;
+  text-decoration: underline;
+}
+
+.mui-card-content .row_top{
+  margin-top: 20px;
+}
+.mui_title{
+  position: absolute;
+  width: 80%;
+  left: 10%;
+  top: -30px;
+  text-align: center;
+}
+#c_activity_type input{
+  margin-top: -5px;
+  font-size: 14px;
+}
+.c_activity_type_lf,.c_activity_type_lr{
+  width: 31%;
+  height: 30px;
+  border: 1px solid #dcdcdc;
+  text-align: center;
+  border-radius: 3px;
+  margin-top: 10px;
+}
+.c_activity_type_lf{
+  position: relative;  
+  float: left;
+  margin-left: 15px;
+}
+
+.c_activity_type_lr{
+  position: relative;  
+  float: right;
+  margin-right:15px;
+}
+#c_activity_type input[name="category"]{
+  
+}
+#c_activity_type input[name="organization"]{
+  
+}
+#c_activity_type input,#c_activity_img #form_upload{
+  position: relative;
+}
+
+#c_activity_img{
+  padding-bottom: 65px;
+}
+.type_examples{
+  display: block;
+  color: rgba(83,127,255,1);
+  font-size: 12px;
+  margin-top: -3px;
+}
+
+#c_activity_img div{
+}
+#c_activity_img img{
+  display: none;
+  width: 40px;
+  height: 40px;
+  margin-top: 14px;
+  margin-left: 20px;
+}
+.mui_masters{
+  width: 100%;
+  margin-bottom: 25px;
+}
+.mui_masters p{
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 12px;
+  color: #fff;
+  opacity: .6;
+}
+/* 弹出层 */
+#submitInfo{
+  width: 80%;
+  margin-left: 10%;
+  line-height: 32px;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 8px;
+  margin-bottom: 25px;
+ 
+}
+#submitInfo.clicks{
+  color: #f11539;
+  background: url(../img/submits.png) no-repeat;
+  background-size: 100% 100%;  
+}
+#submitInfo.no_clicks{
+  color: #999;
+  background: url(../img/submit_no.png) no-repeat;
+  background-size: 100% 100%;  
+}
+.img_examples {
+  position: relative;  
+  /* padding: 15px 0; */
+}
+#popover_sd .img_examples>span{
+  font-size: 14px;
+  padding-left: 15px;
+  padding-right: 15px;
+  word-wrap: break-word;
+}
+.img_examples .m_close{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.m_close{
+  width: 20px;
+  height: 20px;
+}
+
+.img_examples span{
+  background: none;
+  color: #333;
+  border: none;
+  border-bottom: 1px solid #dcdcdc;
+  padding: 15px 15px;
+}
+.img_examples_text,.qrcode_examples{
+  text-align: center;
+  width: 80%;
+  margin-left: 10%;
+  padding: 15px 15px 20px 15px;
+}
+.img_examples_text{
+  position: relative;
+  padding: 10px 0;
+  height: 330px;
+  text-align: left;
+}
+.hx_dorp{
+  margin-top: 10%;
+
+}
+#img_examples_text{
+  height: 300px;
+ 
+}
+.img_examples_text a{
+  font-size: 12px;
+  color: #999;
+  
+}
+.img_examples a.tipster{
+  display: block;
+  font-size: 12px;
+  color: #999;
+  padding: 3px 0;
+}
+.img_examples_text p{
+  text-align: center;
+  padding-bottom: 5px;
+  color:black;
+  padding: 5px 0;
+}
+.img_examples_text p:nth-of-type(5),.img_examples_text ul:nth-of-type(5) li{
+  color: #f11539;
+}
+.img_examples_text li{
+  display: block;
+  color: #999;
+  font-size: 12px;
+}
+.img_examples_text img,.qrcode_examples_text img{
+  margin-bottom: .5rem;
+  width: 100%;
+  border-radius: 8px;
+  border: 2px solid #dcdcdc;
+}
+.check-tips{
+  text-align: center;
+  color: #f11539;
+  padding: 2px 0;
+  display: none;
+}
+/* 是否关注公众号，弹出二维码 */
+
+.qrcode_examples_text_a{
+  color: #999;
+  text-align: center;
+}
+.img_examples_text .qrcode_examples_text_b{
+  width: 100%;
+  text-align: center;
+  color: #fcb272;
+  padding-bottom: 5px;
+}
+.mui_popover{
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .2);
+  z-index: 9999;
+}
+.popover_qrcode{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.mui_popover_qrcode{
+  position: absolute;
+  width: 80%;
+  height: 380px;
+  left: 10%;
+  top: 15%;
+  background: #fff;
+}
