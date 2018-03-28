@@ -1,15 +1,13 @@
 // 基础配置
 
-const { resolve } = require('./uitl')
-const config = require('../config')
+const { resolve, getEntries } = require('./util')
 
 module.exports = {
   context: resolve('./'),
-  entry: resolve('src/main.js'),
+  entry: getEntries(),
   output: {
-    path: resolve('public/js'),
-    filename: 'bundle-[hash:6].js',
-    publicPath: config.publicPath,
+    path: resolve('public'),
+    filename: 'js/[name]-bundle-[hash:6].js',
   },
   resolve: {
     extensions: ['.js', '.vue', '.json'],
@@ -40,7 +38,7 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 10000,
-          name: resolve('public/img/[name]-[hash:6].[ext]'),
+          name: 'img/[name]-[hash:6].[ext]', // 这里要用相对路径，在output.path 下
         },
       },
       {
@@ -48,7 +46,7 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 10000,
-          name: resolve('public/font/[name]-[hash:6].[ext]'),
+          name: 'font/[name]-[hash:6].[ext]',
         },
       },
       {
@@ -57,6 +55,10 @@ module.exports = {
           'style-loader',
           'css-loader',
           'sass-loader',
+          {
+            loader: 'sass-resources-loader',
+            options: {resources: resolve('src/styles/variable.scss')},
+          },
         ],
       },
     ],
