@@ -8,8 +8,8 @@ const root = '/api'
 const urlGetList = root + '/getList'
 
 export default {
-  getList(id) {
+  getList (id) {
     const params = { id }
     return request.get(urlGetList, params)
-  }
+  },
 }

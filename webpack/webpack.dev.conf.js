@@ -25,7 +25,6 @@ module.exports = merge(wpBaseConfig, {
   plugins: [
     ...getHtmlPluginList(),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin(),
     // 是否需要 vconsole
   ],
 

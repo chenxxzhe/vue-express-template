@@ -3,12 +3,16 @@
     <p>Hello Vue</p>
     <p class="emphasize">Hello {{name}}</p>
     <p>go see pictures <a href="/img-page.html">img page</a></p>
+    <footer-bar></footer-bar>
   </div>
 </template>
 
 <script>
+import api from '@/api'
+
+import FooterBar from './footer-bar.vue'
 export default {
-  components: {},
+  components: { FooterBar },
   props: {
 
   },
@@ -21,7 +25,11 @@ export default {
 
   },
   mounted () {
-
+    api.getList(123)
+      .then(res => {
+        if (res.code !== 200) return
+        this.name = res.data
+      })
   },
   methods: {
 

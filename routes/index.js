@@ -15,14 +15,11 @@ if (process.env.NODE_EVN === 'production') {
   }
 }
 
-// 数据接口
-router.get('/api/getList', (req, res) => {
-  res.json([
-    { label: 'a', value: 1 },
-    { label: 'b', value: 2 },
-    { label: 'c', value: 3 },
-    { label: 'd', value: 4 },
-  ])
-})
+// 遍历所有子路由
+function getRoutes (r) {
+  // 遍历所有文件
+}
+
+getRoutes(router)
 
 module.exports = router

@@ -16,12 +16,14 @@ axios.interceptors.request.use(function (config) {
   return Promise.reject(error)
 })
 
+// axios.interceptors.response.use()
+
 const TIMEOUT = 8000
 
 const api = {
   get (url, params, setting) {
     return axios({
-      method: 'GET',
+      method: 'get',
       params,
       timeout: TIMEOUT,
       ...setting,
@@ -30,7 +32,7 @@ const api = {
 
   post (url, data, params, setting) {
     return axios({
-      method: 'POST',
+      method: 'post',
       params,
       data,
       timeout: TIMEOUT,
