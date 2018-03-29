@@ -1,11 +1,11 @@
 // api层，写数据接口供ui层调用，请求工具用axios
 
-import request from '../util/request'
+import request from '@/util/request'
 
 // api根路径
-const root = '/api'
+const root = '/user'
 
-const urlGetList = root + '/getList'
+const urlGetList = root + '/list'
 
 export default {
   getList (id) {

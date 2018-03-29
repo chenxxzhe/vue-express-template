@@ -5,7 +5,7 @@
   "scripts": {
     "start": "npm run dev",
     "server": "node ./bin/www",
-    "dev": "NODE_ENV=development node ./bin/www",
+    "dev": "cross-env NODE_ENV=development node ./bin/www",
     "build": "rm -rf public && webpack --config webpack/webpack.prod.conf.js --progress --color"
   },
   "main": "app.js",
@@ -13,14 +13,13 @@
     "axios": "^0.18.0",
     "body-parser": "~1.18.2",
     "cookie-parser": "~1.4.3",
+    "cross-env": "^5.1.4",
     "debug": "~2.6.9",
     "ejs": "^2.5.7",
     "es6-promise": "^4.2.4",
     "express": "~4.15.5",
     "formidable": "^1.2.0",
-    "jade": "~1.11.0",
     "morgan": "~1.9.0",
-    "request": "^2.83.0",
     "serve-favicon": "~2.4.5",
     "vue": "^2.5.16"
   },
@@ -49,11 +48,12 @@
     "webpack": "^4.2.0",
     "webpack-cli": "^2.0.13",
     "webpack-dev-middleware": "^3.1.0",
-    "webpack-dev-server": "^3.1.1",
     "webpack-hot-middleware": "^2.21.2",
     "webpack-merge": "^4.1.2"
   },
   "author": "chenzhe",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "repository" : "https://github.com/chenxxzhe/vue-express-template",
+  "engines": { "node" : ">=8.5.0" }
 }

@@ -1,14 +1,17 @@
-module.exports = [
-  {
-    path: '/api/getList',
-    cb (res, req) {
-      res.json([
-        { label: 'a', value: 1 },
-        { label: 'b', value: 2 },
-        { label: 'c', value: 3 },
-        { label: 'd', value: 4 },
-      ])
-    },
-  },
+// 子路由返回一个函数供index调用
 
-]
+// router 具体用法可查看express文档 http://www.expressjs.com.cn/4x/api.html#router
+
+function genRoutes (router) {
+  router.get('/user/list', (req, res) => {
+    res.json([
+      { name: 'chenzhe', age: 20 },
+      { name: 'mae', age: 18 },
+    ])
+  })
+  router.post('/user/create', (req, res) => {
+    console.log('create user', req.data)
+  })
+}
+
+module.exports = genRoutes

@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <p>Hello Vue</p>
-    <p class="emphasize">Hello {{name}}</p>
+    <p v-for="item in list" :key="item.name" class="emphasize">Hello {{item.name}}</p>
     <p>go see pictures <a href="/img-page.html">img page</a></p>
     <footer-bar></footer-bar>
   </div>
@@ -18,7 +18,7 @@ export default {
   },
   data () {
     return {
-      name: 'Mae',
+      list: [],
     }
   },
   computed: {
@@ -27,8 +27,8 @@ export default {
   mounted () {
     api.getList(123)
       .then(res => {
-        if (res.code !== 200) return
-        this.name = res.data
+        console.log('get list res', res)
+        this.list = res.data
       })
   },
   methods: {
