@@ -16,7 +16,7 @@ export default {
   props: {
 
   },
-  data () {
+  data() {
     return {
       list: [],
     }
@@ -24,7 +24,7 @@ export default {
   computed: {
 
   },
-  mounted () {
+  mounted() {
     api.getList(123)
       .then(res => {
         console.log('get list res', res)

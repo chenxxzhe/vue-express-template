@@ -9,4 +9,8 @@ files.forEach(file => {
   require(file)(router)
 })
 
+router.get('/home', (req, res) => {
+  res.render('home')
+})
+
 module.exports = router
