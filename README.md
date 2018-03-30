@@ -8,16 +8,16 @@
 - [x] axios
 - [x] sass: 安装node-sass 如果有问题，可以试下 `cnpm i -D node-sass`
 - [x] routes index 自动加载其他子路由
-- [] src外代码修改，自动重启webpack
-- [] 自动开启浏览器
+- [x] src外代码修改，自动重启webpack; `pm2 start pm2.config.js`
+- [x] 自动开启浏览器
 - [] 移动端项目，手机调试console
 - [] 可以引入不经打包的静态文件库
 - [] 微信项目上线后也可以方便调试
 - [] 打包信息，时间，大小
 
 #### 生产环境
-- [] routes 里自动生成页面 route
-- [] 抽出css
+- <del>[] routes 里自动生成页面 route <del>
+- [x] 抽出css
 - [] 产品代码优化
 
 生产环境报错

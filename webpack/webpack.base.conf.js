@@ -1,6 +1,6 @@
 // 基础配置
 
-const { resolve, getEntries } = require('./util')
+const { resolve, getEntries, getCssLoader } = require('./util')
 
 module.exports = {
   context: resolve('./'),
@@ -49,18 +49,7 @@ module.exports = {
           name: 'font/[name]-[hash:6].[ext]',
         },
       },
-      {
-        test: /\.scss$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader',
-          {
-            loader: 'sass-resources-loader',
-            options: {resources: resolve('src/styles/variable.scss')},
-          },
-        ],
-      },
+      getCssLoader(),
     ],
   },
 }

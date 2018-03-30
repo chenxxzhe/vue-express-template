@@ -3,15 +3,16 @@
 const path = require('path')
 const glob = require('glob')
 
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlPlugin = require('html-webpack-plugin')
 
 // 从根目录开始定位
-function resolve (dir) {
+function resolve(dir) {
   return path.join(__dirname, '../', dir)
 }
 
 // 找到所有入口
-function getEntries () {
+function getEntries() {
   const entries = {}
   const files = glob.sync('src/pages/**/index.js')
   const reg = /pages\/(.+)\/index.js$/
@@ -23,8 +24,34 @@ function getEntries () {
   return entries
 }
 
+// 根据环境生成css-loader
+function getCssLoader() {
+  const useList = [
+    'style-loader',
+    'css-loader',
+    'sass-loader',
+    {
+      loader: 'sass-resources-loader',
+      options: {resources: resolve('src/styles/variable.scss')},
+    },
+  ]
+  let ret = useList
+  if (process.env.NODE_ENV === 'production') {
+    useList.shift()
+    ret = ExtractTextPlugin.extract({
+      fallback: 'style-loader',
+      use: useList,
+    })
+  }
+  return {
+    test: /\.s[ac]ss$/,
+    include: resolve('src'),
+    use: ret,
+  }
+}
+
 // 生成多个html
-function getHtmlPluginList (distPath = '') {
+function getHtmlPluginList(distPath = '') {
   const entries = getEntries()
   const list = Object.keys(entries).map(key => {
     const pre = distPath ? distPath + '/' : ''
@@ -44,4 +71,5 @@ module.exports = {
   resolve,
   getEntries,
   getHtmlPluginList,
+  getCssLoader,
 }

@@ -60,6 +60,7 @@ module.exports = {
     }],
     "quotes": [2, "single"],
     "semi": [2, "never"],
+    'space-before-function-paren': [2, { named: 'never'}]
   }
 
 }
