@@ -1,6 +1,6 @@
 // 基础配置
 
-const { resolve, getEntries, getCssLoader } = require('./util')
+const { resolve, getEntries, getSassLoader } = require('./util')
 
 module.exports = {
   context: resolve('./'),
@@ -27,11 +27,26 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: 'vue-loader',
+        options: {
+          loaders: {
+            css: ['vue-style-loader', 'css-loader'],
+            sass: getSassLoader(),
+            scss: getSassLoader(),
+          },
+          // html里的哪种属性会使用require 例如 <img src=""> 会使用require加载
+          // 默认 img.src
+          // transformToRequire: { img: 'src' }
+        },
       },
       {
         test: /\.js$/,
         loader: 'babel-loader',
         include: [resolve('src')],
+      },
+      {
+        test: /\.s[ac]ss$/,
+        include: [resolve('src/styles')],
+        use: getSassLoader(),
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/,
@@ -49,7 +64,6 @@ module.exports = {
           name: 'font/[name]-[hash:6].[ext]',
         },
       },
-      getCssLoader(),
     ],
   },
 }

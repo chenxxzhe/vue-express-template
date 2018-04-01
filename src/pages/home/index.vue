@@ -2,7 +2,7 @@
   <div class="container">
     <p>Hello Vue</p>
     <p v-for="item in list" :key="item.name" class="emphasize">Hello {{item.name}}</p>
-    <p>go see pictures <a href="/img-page.html">img page</a></p>
+    <p>go see pictures <a href="/img-page">img page</a></p>
     <footer-bar></footer-bar>
   </div>
 </template>

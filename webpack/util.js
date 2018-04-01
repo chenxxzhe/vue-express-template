@@ -24,30 +24,26 @@ function getEntries() {
   return entries
 }
 
-// 根据环境生成css-loader
-function getCssLoader() {
+// 根据环境生成css-loader, 分为vue-loader用的与其他css文件用的两种
+function getSassLoader() {
   const useList = [
-    'style-loader',
+    'vue-style-loader',
     'css-loader',
     'sass-loader',
     {
+      // 全局插入公共变量
       loader: 'sass-resources-loader',
       options: {resources: resolve('src/styles/variable.scss')},
     },
   ]
-  let ret = useList
   if (process.env.NODE_ENV === 'production') {
     useList.shift()
-    ret = ExtractTextPlugin.extract({
-      fallback: 'style-loader',
+    return ExtractTextPlugin.extract({
+      fallback: 'vue-style-loader',
       use: useList,
     })
   }
-  return {
-    test: /\.s[ac]ss$/,
-    include: resolve('src'),
-    use: ret,
-  }
+  return useList
 }
 
 // 生成多个html
@@ -71,5 +67,5 @@ module.exports = {
   resolve,
   getEntries,
   getHtmlPluginList,
-  getCssLoader,
+  getSassLoader,
 }

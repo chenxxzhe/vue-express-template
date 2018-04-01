@@ -1,7 +1,13 @@
 // 这里定义全局共用的样式，可以在这里引入重置样式
 // 该文件在common-entry 引入
+@import './variable.scss';
 
 html,
 body {
   height: 100%;
+}
+
+p,ul,li {
+  padding: 0;
+  margin: 0;
 }

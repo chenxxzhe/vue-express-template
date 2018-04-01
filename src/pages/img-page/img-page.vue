@@ -2,7 +2,7 @@
   <div class="container">
     <div>img1: <img class="img1" src="@/assets/me_too.gif" alt="gif"></div>
     <div>img2: <div class="img2"></div></div>
-    <p>go home: <a href="/home.html">home</a></p>
+    <p>go home: <a href="/home">home</a></p>
   </div>
 </template>
 
@@ -14,7 +14,7 @@ export default {
   props: {
 
   },
-  data () {
+  data() {
     return {
 
     }
@@ -22,7 +22,7 @@ export default {
   computed: {
 
   },
-  mounted () {
+  mounted() {
     console.log('me too gif:', img)
   },
   methods: {
