@@ -9,12 +9,17 @@ files.forEach(file => {
   require(file)(router)
 })
 
+// 页面路由
 router.get('/', (req, res) => {
   res.render('home')
 })
 
 router.get('/home', (req, res) => {
   res.render('home')
+})
+
+router.get('/img-page', (req, res) => {
+  res.render('img-page')
 })
 
 module.exports = router

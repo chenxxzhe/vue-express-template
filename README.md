@@ -15,12 +15,11 @@
 - [] 微信项目上线后也可以方便调试
 - [] 打包信息，时间，大小
 
-TODO: 开发环境如何使用render来进入路由，现在是可以用 index.html，但不能用/index
 
 #### 生产环境
-- <del>[] routes 里自动生成页面 route <del>
 - [x] 抽出css, vue文件里面的没有抽出来
 - [] 产品代码优化
+- <del>[] routes 里自动生成页面 route <del>
 
 TODO: 公共的css没单独抽出， 抽出公共库
 
@@ -35,7 +34,7 @@ TODO: 公共的css没单独抽出， 抽出公共库
   - assets  资源文件放这里
   - pages   页面文件放这里，每个页面一个文件夹，文件夹名作为html文件名；一定要有一个index.js作为入口
   - styles  写全局样式与全局变量
-  - util    工具库
+  - tools    工具库
   - common-entry.js   各个page的入口都要引入
   - index.html        各个page的模板
 - views   存放页面文件(html)。由webpack构建时生成。

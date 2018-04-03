@@ -2,7 +2,7 @@
 
 // router 具体用法可查看express文档 http://www.expressjs.com.cn/4x/api.html#router
 
-function genRoutes (router) {
+function genRoutes(router) {
   router.get('/user/list', (req, res) => {
     res.json([
       { name: 'chenzhe', age: 20 },

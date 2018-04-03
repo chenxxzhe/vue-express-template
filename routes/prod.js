@@ -1,6 +1,6 @@
 // 子路由返回一个函数供index调用
 
-module.exports = function genRoute (router) {
+module.exports = function genRoute(router) {
   const root = '/prod'
   router.get(root + '/list', (req, res) => {
     res.json([

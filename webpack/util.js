@@ -47,7 +47,7 @@ function getSassLoader() {
 }
 
 // 生成多个html
-function getHtmlPluginList(distPath = '') {
+function getHtmlPluginList(distPath = '', writeToDisk) {
   const entries = getEntries()
   const list = Object.keys(entries).map(key => {
     const pre = distPath ? distPath + '/' : ''
@@ -55,6 +55,7 @@ function getHtmlPluginList(distPath = '') {
       filename: `${pre}${key}.html`,
       template: resolve('src/index.html'),
       chunks: [key],
+      alwaysWriteToDisk: !!writeToDisk,
     }
     console.log('generate html:', option.filename)
     return new HtmlPlugin(option)

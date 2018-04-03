@@ -1,6 +1,10 @@
 // 基础配置
+console.log('NODE_ENV', process.env.NODE_ENV)
 
-const { resolve, getEntries, getSassLoader } = require('./util')
+// express 渲染引擎需要实际文件的存在
+const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin')
+
+const { resolve, getEntries, getSassLoader, getHtmlPluginList } = require('./util')
 
 module.exports = {
   context: resolve('./'),
@@ -66,4 +70,9 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    // write to dist
+    ...getHtmlPluginList(resolve('views'), true),
+    new HtmlWebpackHarddiskPlugin(),
+  ],
 }

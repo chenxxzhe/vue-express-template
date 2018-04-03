@@ -7,8 +7,6 @@ var bodyParser = require('body-parser')
 
 var app = express()
 
-console.log('NODE_ENV: ', process.env.NODE_ENV)
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
 app.engine('html', require('ejs').renderFile)
@@ -21,7 +19,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
 
-// 整合webpack
+/** *********** 开发环境 ***************** */
 if (process.env.NODE_ENV === 'development') {
   const webpack = require('webpack')
   const webpackConfig = require('./webpack/webpack.dev.conf')
@@ -31,6 +29,7 @@ if (process.env.NODE_ENV === 'development') {
   const devMiddleware = require('webpack-dev-middleware')(compiler, {
     publicPath: webpackConfig.output.publicPath,
     // noInfo: true,
+    // writeToDisk: true,
     stats: {
       colors: true,
     },
@@ -68,6 +67,7 @@ if (process.env.NODE_ENV === 'development') {
   console.log('static assets path: ', assetsPath)
   app.use(assetsPath || '/', express.static('./static')) // 不经打包的资源的地址
 }
+/** *********** 结束 ***************** */
 
 // 路由
 app.use('/', require('./routes'))
