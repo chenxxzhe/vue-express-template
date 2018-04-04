@@ -3,9 +3,11 @@
 const merge = require('webpack-merge')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
+const CopyPlugin = require('copy-webpack-plugin')
 
 const wpBaseConfig = require('./webpack.base.conf')
 const config = require('../config')
+const { resolve } = require('./util')
 
 module.exports = merge(wpBaseConfig, {
   mode: 'production',
@@ -22,5 +24,14 @@ module.exports = merge(wpBaseConfig, {
     }),
     // 压缩抽出的css文件
     new OptimizeCSSPlugin({safe: true}),
+
+    // 复制静态文件夹
+    new CopyPlugin([
+      {
+        from: resolve('static'),
+        to: 'static',
+        toType: 'dir',
+      },
+    ]),
   ],
 })

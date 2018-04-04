@@ -3,10 +3,8 @@
 module.exports = {
   dev: {
     // host: '0.0.0.0',
-    port: '10001',
+    port: '9900',
     publicPath: '/', // 服务器相对路径
-    staticPath: 'abc', // 服务器资源路径
-    // contentBase: 'public/js' // 本地资源路径
 
     // 接口转发, 文档: https://github.com/chimurai/http-proxy-middleware#options
     // proxy: {
@@ -16,9 +14,11 @@ module.exports = {
     //     pathRewrite: {'^/api': ''},
     //   },
     // },
+
+    // 移动端开启vconsole
+    phoneConsole: false,
   },
   prod: {
     publicPath: '/',
-    staticPath: 'static',
   },
 }

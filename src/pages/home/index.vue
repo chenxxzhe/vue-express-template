@@ -30,6 +30,8 @@ export default {
         console.log('get list res', res)
         this.list = res.data
       })
+
+    console.log('test vconsole')
   },
   methods: {
 

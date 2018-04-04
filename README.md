@@ -10,14 +10,13 @@
 - [x] routes index 自动加载其他子路由
 - [x] src外代码修改，自动重启webpack; `pm2 start pm2.config.js`
 - [x] 自动开启浏览器
-- [] 移动端项目，手机调试console
-- [] 可以引入不经打包的静态文件库
-- [] 微信项目上线后也可以方便调试
+- [x] 移动端项目，手机调试console，使用vconsole
 - [] 打包信息，时间，大小
 
 
 #### 生产环境
 - [x] 抽出css, vue文件里面的没有抽出来
+- [x] 可以引入不经打包的静态文件库。 static 文件夹直接复制到 public
 - [] 产品代码优化
 - <del>[] routes 里自动生成页面 route <del>
 
