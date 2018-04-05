@@ -5,6 +5,8 @@ const merge = require('webpack-merge')
 const wpBaseConfig = require('./webpack.base.conf')
 const config = require('../config')
 
+const VConsole = require('vconsole-webpack-plugin')
+
 // hot-reload entries
 const entry = {}
 Object.keys(wpBaseConfig.entry).forEach(key => {
@@ -23,5 +25,8 @@ module.exports = merge(wpBaseConfig, {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     // 是否需要 vconsole
+    new VConsole({
+      enable: !!config.dev.phoneConsole,
+    }),
   ],
 })
