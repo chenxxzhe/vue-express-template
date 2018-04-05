@@ -3,7 +3,7 @@ console.log('NODE_ENV', process.env.NODE_ENV)
 
 // express 渲染引擎需要实际文件的存在
 const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin')
-
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const { resolve, getEntries, getSassLoader, getHtmlPluginList } = require('./util')
 
 module.exports = {
@@ -74,5 +74,7 @@ module.exports = {
     // write to dist
     ...getHtmlPluginList(resolve('views'), true),
     new HtmlWebpackHarddiskPlugin(),
+
+    new FriendlyErrorsWebpackPlugin(),
   ],
 }
