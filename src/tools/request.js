@@ -30,7 +30,7 @@ axios.interceptors.response.use(res => {
 const TIMEOUT = 8000
 
 const api = {
-  get (url, params, setting) {
+  get(url, params, setting) {
     return axios({
       url,
       method: 'get',
@@ -40,7 +40,7 @@ const api = {
     })
   },
 
-  post (url, data, params, setting) {
+  post(url, data, params, setting) {
     return axios({
       url,
       method: 'post',

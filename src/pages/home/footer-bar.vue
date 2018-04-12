@@ -1,5 +1,5 @@
 <template>
-  <div>footer</div>
+  <div>footer 2</div>
 </template>
 
 <script>
@@ -8,14 +8,14 @@ export default {
   props: {
 
   },
-  data () {
+  data() {
     return {
 
     }
   },
   computed: {
   },
-  mounted () {
+  mounted() {
 
   },
   methods: {

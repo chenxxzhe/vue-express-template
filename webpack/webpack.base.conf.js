@@ -1,10 +1,8 @@
 // 基础配置
-console.log('NODE_ENV', process.env.NODE_ENV)
 
 // express 渲染引擎需要实际文件的存在
-const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin')
-
-const { resolve, getEntries, getSassLoader, getHtmlPluginList } = require('./util')
+const { resolve, getEntries, getSassLoader } = require('./util')
+const config = require('../config')
 
 module.exports = {
   context: resolve('./'),
@@ -12,6 +10,7 @@ module.exports = {
   output: {
     path: resolve('public'),
     filename: 'js/[name]-bundle-[hash:6].js',
+    publicPath: config.prod.publicPath || '/',
   },
   resolve: {
     extensions: ['.js', '.vue', '.json'],
@@ -70,9 +69,4 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    // write to dist
-    ...getHtmlPluginList(resolve('views'), true),
-    new HtmlWebpackHarddiskPlugin(),
-  ],
 }

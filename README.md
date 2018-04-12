@@ -4,7 +4,8 @@
 
 #### 开发环境
 - [x] vue
-- [] vue ssr/pre-render
+- [] vue ssr
+- [x] pre-render
 - [x] axios
 - [x] sass: 安装node-sass 如果有问题，可以试下 `cnpm i -D node-sass`
 - [x] routes index 自动加载其他子路由
@@ -12,7 +13,6 @@
 - [x] 自动开启浏览器
 - [x] 移动端项目，手机调试console，使用vconsole
 - [] 打包信息，时间，大小
-
 
 #### 生产环境
 - [x] 抽出css, vue文件里面的没有抽出来
@@ -42,17 +42,21 @@ TODO: 公共的css没单独抽出， 抽出公共库
 
 ## 命令
 
-- 开发，开发模式运行服务器，不会产生文件
+- 开发，devServer，如果需要获取数据，那么也要开启 express 服务器
 
 `npm start`
 
-- 构建，生成最终文件到express对应的文件夹
+- 运行 express 服务器
+
+`npm run server`
+
+- 构建，生成最终文件到 express 对应的文件夹
 
 `npm run build`
 
-- 生产模式运行服务器
+- 预渲染，预渲染可能要用到服务器来请求数据，因此要先开启服务器
 
-`npm run server`
+`npm run server & npm run build`
 
 ## 提示
 
@@ -61,4 +65,4 @@ TODO: 公共的css没单独抽出， 抽出公共库
 
 ## 难点
 
-- 路径问题：很多配置都需用到路径，要注意什么时候用绝对路径，什么时候用相对路径，用相对路径的时候是基于那个路径
+- 路径问题：很多配置都需用到路径，要注意什么时候用绝对路径，什么时候用相对路径，用相对路径的时候是基于哪个路径

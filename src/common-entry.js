@@ -7,11 +7,12 @@ import './styles/base.scss'
 
 Vue.config.productionTip = false
 
-function createApp(app) {
+function createApp(App) {
   /* eslint-disable */
-  new Vue({
+  const root = new Vue({
     el: '#app',
-    render: h => h(app),
+    template: '<div id="app"><App /></div>',
+    components: { App },
   })
   /* eslint-enable */
 }
