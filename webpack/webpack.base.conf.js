@@ -3,6 +3,7 @@
 // express 渲染引擎需要实际文件的存在
 const { resolve, getEntries, getSassLoader } = require('./util')
 const config = require('../config')
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 
 module.exports = {
   context: resolve('./'),
@@ -69,4 +70,7 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new FriendlyErrorsWebpackPlugin(),
+  ],
 }
